@@ -1,0 +1,134 @@
+{
+  "destinations": [
+    {
+      "id": 1,
+      "name": "Val Thorens - France",
+      "subtitle": "The youngest of all the big ski resorts in Europe",
+      "url": "https://image.jimcdn.com/app/cms/image/transf/none/path/sa6549607c78f5c11/image/ib8da83e3bfc9c96b/version/1667411185/best-ski-resorts-in-europe-val-gardena-dolomites-copyright-valgardena-it.jpg",
+      "favorite": true,
+      "fullDescription": "Every winter, Val Thorens and its teams of  professional and passionate people, do their utmost to provide holiday-makers with magical experiences. By sharing these moments they transmit their values, passions and their know-how. A common vision, 'LIVE UNITED' which has been written for 50 years, and which has only one goal: create together unique, festive, and sporting experiences. At 2300 metres above sea level, Val Thorens is commited to innovate and create unique memories. You won't find 'traditional' here, because Val Thorens has never done things like the others. Val Thorens owes this exceptional reputation above all to its location: Val Thorens has achieved the impossible by becoming the highest ski resort in Europe, and the largest ski area in the world with over 600 kilometres of runs. The resort was essentially created for one reason and one reason only: to offer the best skiing which you can't find anywhere else. Vincent Lalanne, director of Val Thorens",
+      "popularImages": [
+        {
+          "id": 1,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/i4d405c70ad05da49/version/1667411299/image.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/i6939794cb9b5a34c/version/1667411299/image.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/id15629221f11d9c8/version/1667411299/image.jpg"
+        },
+        {
+          "id": 4,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/i030716819d732462/version/1667411299/image.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Val Gardena - Italy",
+      "subtitle": "Visit Italy best ski resort",
+      "url": "https://image.jimcdn.com/app/cms/image/transf/none/path/sa6549607c78f5c11/image/i5d7ec676e6e2d905/version/1667483582/zermatt-european-best-ski-resorts.jpg",
+      "favorite": true,
+      "fullDescription": "Val Gardena and the villages of Ortisei, Santa Cristina and Selva are well-known names on the international skiing stage, making them the perfect destination for people wanting to spend a winter holiday with plenty of outdoor leisure activities. The Sellaronda, the legendary skiing carousel around the Sella, and the connection to Alpe di Siusi and Dolomiti Superski (12 skiing areas and 1,200 km of slopes) can satisfy the needs of every skier, from beginners to pros. Five Alpine skiing schools and two mountaineering schools welcome enthusiasts of all ages every year and offer fun activities both on and off the slopes. Val Gardena also stands for high-quality food as well as art and culture.",
+      "popularImages": [
+        {
+          "id": 1,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/ib4a17757bac190ea/version/1600606545/image.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/i55fa132f29726318/version/1600606545/image.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/i03bdf0097609b3f2/version/1600606545/image.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Zermatt - Switzerland",
+      "subtitle": "The village at the foot of the Matterhorn",
+      "url": "https://image.jimcdn.com/app/cms/image/transf/none/path/sa6549607c78f5c11/image/i2b1e66007829bebf/version/1667418091/best-ski-resorts-in-europe-kitzb%C3%BChel-copyright-gevision.jpg",
+      "favorite": true,
+      "fullDescription": "Every year you rank Zermatt among the best ski resorts in Europe but it the first time that the Best ski resorts in Switzerland is on this European podium. You have also ranked it among the most beautiful ski resorts in Europe, best destinations to visit by train and among the most luxurious ski resorts. The snow sports resort of Zermatt - Matterhorn is one of the places you simply must have seen at least once in your life. Breath-taking Alpine panorama and 360 km of pistes attract ski fans, bon vivants and Alpinists. The village at the foot of the Matterhorn issurrounded by magnificent Alpine landscape. Covered in snow at 1,620 metres (the level of the train station), the village looks like something out of a fairy-tale. 360 kilometres of pistes, situated at heights between 1,620 and 3,883 metres both in Switzerland and in Italy, offer limitless and borderless skiing opportunities. 70 per cent of the slopes are on the glacier or can be snowed. Then there is Zermatt’s Snow Park, an absolute must for freestylers and snowboarders.",
+      "popularImages": [
+        {
+          "id": 1,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/ia6d69329c27c9680/version/1600596544/image.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/id0a00180690b5ad5/version/1600596545/image.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/ib47946bac8945fa3/version/1600596545/image.jpg"
+        },
+        {
+          "id": 4,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/ic166b4671e49c111/version/1600596545/image.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Sölden - Austria",
+      "subtitle": "35 mountain lifts with absolutely no lift lines.",
+      "url": "https://image.jimcdn.com/app/cms/image/transf/none/path/sa6549607c78f5c11/image/ica8ece5515274eb4/version/1667491743/best-ski-resorts-in-europe-s%C3%B6lden-copyright-oetzal-com.jpg",
+      "favorite": false,
+      "fullDescription": "This winter ski in complete safety in one of the best ski resorts in Europe. Skiers and snowboarders can choose from no less than 148 kilometres of perfectly groomed slopes for all levels and abilities, 35 mountain lifts with absolutely no lift lines. In Ötztal's renowned skiing paradise the winter term already has three seasons made to measure for early winter fans, passionate endurance sportsmen and après-ski aficionados. Linked ski areas in the eternal ice The glacier slopes in the upper Ötztal, towering high above the skiers village, offer perfect snow conditions already from early September. Of course, snow is also guaranteed between 1350 and 3340 metres above sea level from October through May - thanks to a top modern snow making system covering some 80 percent of all slopes.",
+      "popularImages": [
+        {
+          "id": 1,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/i961ba79771d28bc7/version/1667471694/image.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/ieafd761e97ddaeb8/version/1667471694/image.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/id1cea756127c89ca/version/1667471694/image.jpg"
+        },
+        {
+          "id": 4,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/ic0c3c08792ac9e35/version/1667471694/image.jpg"
+        },
+        {
+          "id": 5,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/none/path/sa6549607c78f5c11/image/if67310598d9a1ef1/version/1667471504/best-ski-resorts-in-europe-garmisch-partenkirchen.jpg"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Gdansk - Poland",
+      "subtitle": "The Gdańsk Christmas Fair is considered to be one of the most beautiful in Poland",
+      "url": "https://image.jimcdn.com/app/cms/image/transf/none/path/sa6549607c78f5c11/image/i7f2112c6dd90e2a5/version/1670146865/gdansk-best-christmas-market-europe.jpg",
+      "favorite": false,
+      "fullDescription": "The amazing ambience of the Christmas Fair is mostly created by its unique and mood-setting scenery. The Three Wise Men, angels and saints look at you from Angel Mill, high above. You can ride a horse or take a spin on a fabulous Venetian carousel or find a moment of solace at the Holy Family Shrine. During the Fair, the streets of the historic heart of Gdańsk turn into a Christmas town. Yuletide decorations, stalls with remarkable products and an extensive artistic program ensure that everyone finds something for themselves here. The Fair  feature 155 stalls with unique gifts, decorations and treats. There is regional products based on carefully preserved family recipes: unique handicrafts, home decorations, natural cosmetics, warm winter accessories and spices to keep you warm.",
+      "popularImages": [
+        {
+          "id": 1,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/ice2777d1474a2533/version/1671104595/image.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/i45ca9d1f7c3ed910/version/1671104595/image.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/ia3d216cfd7b32b3a/version/1671104595/image.jpg"
+        },
+        {
+          "id": 4,
+          "url": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sa6549607c78f5c11/image/i6a7c5a1f7c39c957/version/1671104595/image.jpg"
+        }
+      ]
+    }
+  ]
+}
