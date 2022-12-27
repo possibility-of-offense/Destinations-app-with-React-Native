@@ -102,11 +102,13 @@ const DestinationDetailsScreen = ({ navigation, route }) => {
 
         {showGallery &&
           detailsData.popularImages?.length > 0 &&
-          detailsData.popularImages.map((img) => (
+          detailsData.popularImages.map((img, i) => (
             <TouchableOpacity
               key={img.id}
               onPress={() =>
                 navigation.navigate("Gallery Image", {
+                  id: detailsData.id,
+                  imageId: img.id,
                   url: img.url,
                   title: route.params.title,
                 })
