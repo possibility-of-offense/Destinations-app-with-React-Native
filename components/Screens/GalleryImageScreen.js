@@ -1,5 +1,5 @@
 // React native
-import { View, ImageBackground, StyleSheet } from "react-native";
+import { View, ImageBackground, StyleSheet, Image } from "react-native";
 
 // Hooks
 import { useEffect, useState } from "react";
@@ -80,7 +80,7 @@ const GalleryImageScreen = ({ navigation, route }) => {
   };
 
   return (
-    <View style={{ flex: orientation.portrait ? 0.8 : 1 }}>
+    <View style={{ flex: orientation.portrait ? 0.6 : 1 }}>
       <View style={styles.buttonsWrapper}>
         {showPrev && (
           <MaterialCommunityIcons
@@ -101,7 +101,7 @@ const GalleryImageScreen = ({ navigation, route }) => {
           />
         )}
       </View>
-      <ImageBackground source={{ uri: route.params.url }} style={{ flex: 1 }} />
+      <Image source={{ uri: route.params.url }} style={{ height: 300 }} />
     </View>
   );
 };
