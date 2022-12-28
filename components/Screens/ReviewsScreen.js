@@ -30,7 +30,7 @@ function ReviewsScreen({ navigation, route }) {
 
   return (
     <SafeAreaView
-      style={{ paddingTop: Constants.statusBarHeight - 15, flex: 1 }}
+      style={{ paddingTop: Constants.statusBarHeight - 35, flex: 1 }}
     >
       <Text style={reviewScreenStyle.heading}>
         {reviews?.length > 0 ? "Reviews" : "No reviews yet"}

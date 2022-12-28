@@ -3,8 +3,9 @@ import { useDeviceOrientation } from "@react-native-community/hooks";
 import { StyleSheet, Text, View } from "react-native";
 
 // React navigation
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 // Icons
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -19,91 +20,111 @@ import DestinationDetailsScreen from "./components/Screens/DestinationDetailsScr
 import GalleryImageScreen from "./components/Screens/GalleryImageScreen";
 import ReviewsScreen from "./components/Screens/ReviewsScreen";
 import ReviewsByUserScreen from "./components/Screens/ReviewsByUserScreen";
+import React, { useState } from "react";
 
 const Stack = createNativeStackNavigator();
+
+// Context
+export const ThemeContext = React.createContext({});
+
+// Drawer
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   const orientation = useDeviceOrientation();
 
-  const show = (val) => console.log(val);
+  const [themeColor, setThemeColors] = useState(colors.white);
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          header: (props) => (
-            <View
-              style={{
-                height: orientation.portrait ? 90 : 60,
-                backgroundColor: colors.primaryGreen,
-              }}
-            >
-              {props.route.name === "Home" ? (
-                <Text
-                  style={{
-                    color: colors.white,
-                    marginTop: orientation.portrait ? 50 : 25,
-                    marginLeft: 20,
-                    fontSize: 18,
-                    fontWeight: "bold",
-                  }}
-                >
-                  <MaterialCommunityIcons
-                    onPress={() => props.navigation.navigate("Home")}
-                    name="home"
-                    size={30}
-                  />
-                </Text>
-              ) : (
-                <Text
-                  style={{
-                    color: colors.white,
-                    marginTop: orientation.portrait ? 50 : 25,
-                    marginLeft: 20,
-                    fontSize: 18,
-                    fontWeight: "bold",
-                  }}
-                  onPress={() => props.navigation.pop()}
-                >
-                  <MaterialCommunityIcons name="chevron-left" size={18} />
-                  {props.options.title}
-                </Text>
-              )}
-            </View>
-          ),
-        }}
-      >
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ title: "Home" }}
-        />
-        <Stack.Screen
-          name="All Destinations"
-          component={AllDestinationsScreen}
-          options={{ title: "All Destinations" }}
-        />
-        <Stack.Screen
-          name="Destination Details"
-          component={DestinationDetailsScreen}
-          options={{ title: "Destination Details" }}
-        />
-        <Stack.Screen
-          name="Gallery Image"
-          component={GalleryImageScreen}
-          options={{ title: "Image" }}
-        />
-        <Stack.Screen
-          name="Reviews"
-          component={ReviewsScreen}
-          options={{ title: "Review" }}
-        />
-        <Stack.Screen
-          name="Reviews by user"
-          component={ReviewsByUserScreen}
-          options={{ title: "Reviews by " }}
-        />
-      </Stack.Navigator>
+    <NavigationContainer
+      theme={{
+        ...DefaultTheme,
+        colors: {
+          ...DefaultTheme.colors,
+          background: themeColor,
+          // background: "#57608a",
+        },
+      }}
+    >
+      <ThemeContext.Provider value={{ themeColor, setThemeColors }}>
+        <Stack.Navigator
+          screenOptions={{
+            header: (props) => (
+              <View
+                style={{
+                  height: orientation.portrait ? 90 : 60,
+                  backgroundColor: colors.primaryGreen,
+                }}
+              >
+                {props.route.name === "Home" ? (
+                  <Text
+                    style={{
+                      color: colors.white,
+                      marginTop: orientation.portrait ? 50 : 25,
+                      marginLeft: 20,
+                      fontSize: 18,
+                      fontWeight: "bold",
+                    }}
+                  >
+                    <MaterialCommunityIcons
+                      onPress={() => props.navigation.navigate("Home")}
+                      name="home"
+                      size={30}
+                    />
+                  </Text>
+                ) : (
+                  <Text
+                    style={{
+                      color: colors.white,
+                      marginTop: orientation.portrait ? 50 : 25,
+                      marginLeft: 20,
+                      fontSize: 18,
+                      fontWeight: "bold",
+                    }}
+                    onPress={() => props.navigation.pop()}
+                  >
+                    <MaterialCommunityIcons name="chevron-left" size={18} />
+                    {props.options.title}
+                  </Text>
+                )}
+              </View>
+            ),
+          }}
+        >
+          <Drawer.Navigator initialRouteName="Home">
+            <Stack.Screen
+              name="Home"
+              component={Home}
+              options={{ title: "Home" }}
+            />
+            <Stack.Screen
+              name="All Destinations"
+              component={AllDestinationsScreen}
+              options={{ title: "All Destinations" }}
+            />
+            <Stack.Screen
+              name="Destination Details"
+              component={DestinationDetailsScreen}
+              options={{ title: "Destination Details" }}
+            />
+            <Stack.Screen
+              name="Gallery Image"
+              component={GalleryImageScreen}
+              options={{ title: "Image" }}
+            />
+            <Stack.Screen
+              name="Reviews"
+              component={ReviewsScreen}
+              options={{ title: "Review" }}
+            />
+            <Stack.Screen
+              name="Reviews by user"
+              component={ReviewsByUserScreen}
+              options={{ title: "Reviews by " }}
+            />
+          </Drawer.Navigator>
+        </Stack.Navigator>
+      </ThemeContext.Provider>
     </NavigationContainer>
   );
 }

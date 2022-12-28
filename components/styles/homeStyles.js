@@ -16,8 +16,8 @@ const homeStyles = StyleSheet.create({
     alignItems: "center",
     padding: 15,
     backgroundColor: colors.primaryDark,
-    position: "absolute",
-    bottom: 0,
+    // position: "absolute",
+    // bottom: 0,
     alignSelf: "flex-end",
     zIndex: 1,
   },
@@ -26,11 +26,24 @@ const homeStyles = StyleSheet.create({
     fontWeight: "bold",
     color: colors.white,
   },
-  homeContainer: { paddingBottom: 100, paddingHorizontal: 20, paddingTop: 10 },
+  homeContainer: { paddingBottom: 20, paddingHorizontal: 20, paddingTop: 10 },
   homeContainerHeading: {
     textAlign: "center",
     fontSize: 18,
     marginBottom: 10,
+  },
+  switchContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  switchContainerText: {
+    fontWeight: "bold",
+    marginRight: 8,
+  },
+  switchContainerToggler: {
+    flexDirection: "row",
+    alignItems: "center",
   },
 });
 

@@ -1,9 +1,9 @@
 // Hooks
 import { useDeviceOrientation } from "@react-native-community/hooks";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 // React native
-import { View, Text, Image, ScrollView, StyleSheet } from "react-native";
+import { View, Text, Image, ScrollView, Switch } from "react-native";
 
 // Components
 import Card from "../Cards/Card";
@@ -12,16 +12,21 @@ import Card from "../Cards/Card";
 import data from "../../data/destinationsData.json";
 
 // Styles
-import { homeStyles as styles } from "../styles/homeStyles";
+import { homeStyles, homeStyles as styles } from "../styles/homeStyles";
 import PrimaryButton from "../Buttons/PrimaryButton.android";
 
 // Colors
 import colors from "../../config/colors";
+import { ThemeContext } from "../../App";
 
 const Home = ({ navigation }) => {
   const orientation = useDeviceOrientation();
 
   const [destinations, setDestinations] = useState([]);
+  const [switchValue, setSwitchValue] = useState(false);
+
+  // Context
+  const themeContext = useContext(ThemeContext);
 
   // Get favorite destinations
   useEffect(() => {
@@ -38,34 +43,18 @@ const Home = ({ navigation }) => {
     navigation.navigate("Destination Details", { id, title });
   };
 
+  // Change Bg
+  const handleToggleBgBackground = (val) => {
+    setSwitchValue(val);
+    if (val) {
+      themeContext.setThemeColors("#57608a");
+    } else {
+      themeContext.setThemeColors(colors.white);
+    }
+  };
+
   return (
     <View style={styles.mainContainer}>
-      <View
-        style={[
-          styles.bottomFixedContainer,
-          { height: orientation.portrait ? 80 : "auto" },
-        ]}
-      >
-        <Image
-          style={{
-            width: orientation.portrait ? 60 : 45,
-            height: orientation.portrait ? 60 : 45,
-            borderRadius: orientation.portrait ? 30 : 22.5,
-          }}
-          source={require("../../assets/73138031.jpg")}
-        />
-        <Text
-          style={[
-            styles.bottomFixedContainerText,
-            {
-              fontSize: orientation.portrait ? 15 : 13,
-              marginLeft: orientation.portrait ? 15 : "auto",
-            },
-          ]}
-        >
-          Copyright &copy; - Ventsislav Iliev 2022
-        </Text>
-      </View>
       <ScrollView>
         <View style={styles.homeContainer}>
           <Text style={styles.homeContainerHeading}>
@@ -95,6 +84,43 @@ const Home = ({ navigation }) => {
                 />
               ))}
           </View>
+        </View>
+        <View style={homeStyles.switchContainer}>
+          <Text style={styles.switchContainerText}>
+            Change Background Color
+          </Text>
+          <View style={styles.switchContainerToggler}>
+            <Switch
+              value={switchValue}
+              onValueChange={handleToggleBgBackground}
+            />
+          </View>
+        </View>
+        <View
+          style={[
+            styles.bottomFixedContainer,
+            { height: orientation.portrait ? 80 : "auto" },
+          ]}
+        >
+          <Image
+            style={{
+              width: orientation.portrait ? 60 : 45,
+              height: orientation.portrait ? 60 : 45,
+              borderRadius: orientation.portrait ? 30 : 22.5,
+            }}
+            source={require("../../assets/73138031.jpg")}
+          />
+          <Text
+            style={[
+              styles.bottomFixedContainerText,
+              {
+                fontSize: orientation.portrait ? 15 : 13,
+                marginLeft: orientation.portrait ? 15 : "auto",
+              },
+            ]}
+          >
+            Copyright &copy; - Ventsislav Iliev 2022
+          </Text>
         </View>
       </ScrollView>
     </View>

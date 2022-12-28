@@ -30,9 +30,10 @@ const destinationDetailsStyle = StyleSheet.create({
     textAlign: "center",
   },
   galleryContainerHeadingAdditional: {
-    fontSize: 10,
+    fontSize: 12,
     letterSpacing: 2,
     textAlign: "center",
+    fontWeight: "bold",
   },
   galleryCard: {
     marginVertical: 5,
