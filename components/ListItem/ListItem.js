@@ -2,7 +2,7 @@
 import { Fragment, useState } from "react";
 
 // React native
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 
 // Styles
 import { listItemStyle } from "../styles/listItemStyle";
@@ -13,7 +13,7 @@ import colors from "../../config/colors";
 // Icons
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-function ListItem({ item }) {
+function ListItem({ navigation, item }) {
   const originalReview = item.text;
   const cutReview = item.text.split(" ").slice(0, 30).join(" ") + "...";
 
@@ -31,7 +31,16 @@ function ListItem({ item }) {
       <Image style={listItemStyle.userImage} source={{ uri: item.image }} />
       <View style={listItemStyle.userInfo}>
         <View style={listItemStyle.userInfoNameAction}>
-          <Text style={listItemStyle.userInfoName}>{item.name}</Text>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("Reviews by user", {
+                id: item.id,
+                name: item.name,
+              })
+            }
+          >
+            <Text style={listItemStyle.userInfoName}>{item.name}</Text>
+          </TouchableOpacity>
           <MaterialCommunityIcons
             onPress={handleTemporaryLikingReview}
             name={fakeLiking ? "star" : "star-outline"}

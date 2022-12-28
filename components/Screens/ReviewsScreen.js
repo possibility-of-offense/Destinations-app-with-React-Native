@@ -1,5 +1,5 @@
 // React native
-import { View, Text, FlatList, SafeAreaView } from "react-native";
+import { View, Text, FlatList, SafeAreaView, ScrollView } from "react-native";
 
 // React hooks
 import { useEffect, useState } from "react";
@@ -14,6 +14,9 @@ import Constants from "expo-constants";
 import { reviewScreenStyle } from "../styles/reviewScreenStyle";
 import ListItem from "../ListItem/ListItem";
 
+// Colors
+import colors from "../../config/colors";
+
 function ReviewsScreen({ navigation, route }) {
   const [reviews, setReviews] = useState([]);
 
@@ -23,24 +26,37 @@ function ReviewsScreen({ navigation, route }) {
       title: `Reviews about ${route.params.title}`,
     });
     setReviews(data.reviews[route.params.id] || {});
-  }, []);
+  }, [route.params.id]);
 
   return (
-    <SafeAreaView style={{ paddingTop: Constants.statusBarHeight - 15 }}>
+    <SafeAreaView
+      style={{ paddingTop: Constants.statusBarHeight - 15, flex: 1 }}
+    >
       <Text style={reviewScreenStyle.heading}>
         {reviews?.length > 0 ? "Reviews" : "No reviews yet"}
       </Text>
-      <FlatList
-        style={reviewScreenStyle.list}
-        data={reviews}
-        keyExtractor={(review) => review.id}
-        renderItem={({ item, index, separators }) => <ListItem item={item} />}
-        ItemSeparatorComponent={() => (
-          <View style={{ width: "100%", height: 1, backgroundColor: "#333" }}>
-            <Text>Separator</Text>
-          </View>
-        )}
-      />
+      <View style={{ flex: 1 }}>
+        <FlatList
+          contentContainerStyle={{ paddingBottom: 50 }}
+          style={reviewScreenStyle.list}
+          data={reviews}
+          keyExtractor={(review) => review.id}
+          renderItem={({ item, index, separators }) => (
+            <ListItem navigation={navigation} item={item} />
+          )}
+          ItemSeparatorComponent={() => (
+            <View
+              style={{
+                width: "100%",
+                height: 1,
+                backgroundColor: colors.primaryGreen,
+              }}
+            >
+              <Text>Separator</Text>
+            </View>
+          )}
+        />
+      </View>
     </SafeAreaView>
   );
 }

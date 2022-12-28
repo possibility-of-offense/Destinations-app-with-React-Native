@@ -18,6 +18,7 @@ import AllDestinationsScreen from "./components/Screens/AllDestinationsScreen";
 import DestinationDetailsScreen from "./components/Screens/DestinationDetailsScreen";
 import GalleryImageScreen from "./components/Screens/GalleryImageScreen";
 import ReviewsScreen from "./components/Screens/ReviewsScreen";
+import ReviewsByUserScreen from "./components/Screens/ReviewsByUserScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -96,6 +97,11 @@ export default function App() {
           name="Reviews"
           component={ReviewsScreen}
           options={{ title: "Review" }}
+        />
+        <Stack.Screen
+          name="Reviews by user"
+          component={ReviewsByUserScreen}
+          options={{ title: "Reviews by " }}
         />
       </Stack.Navigator>
     </NavigationContainer>
