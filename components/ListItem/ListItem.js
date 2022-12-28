@@ -19,13 +19,26 @@ function ListItem({ item }) {
 
   const [showFullReview, setShowFullReview] = useState(false);
 
+  // Toggling content review
   const handleTogglingReviewContent = () => setShowFullReview((prev) => !prev);
+
+  // Temporary liking the review
+  const [fakeLiking, setFakeLiking] = useState(false);
+  const handleTemporaryLikingReview = () => setFakeLiking((prev) => !prev);
 
   return (
     <View style={listItemStyle.listItem}>
       <Image style={listItemStyle.userImage} source={{ uri: item.image }} />
       <View style={listItemStyle.userInfo}>
-        <Text style={listItemStyle.userInfoName}>{item.name}</Text>
+        <View style={listItemStyle.userInfoNameAction}>
+          <Text style={listItemStyle.userInfoName}>{item.name}</Text>
+          <MaterialCommunityIcons
+            onPress={handleTemporaryLikingReview}
+            name={fakeLiking ? "star" : "star-outline"}
+            size={24}
+            color="gold"
+          />
+        </View>
         <Text style={listItemStyle.userReview}>
           {showFullReview ? originalReview : cutReview}
         </Text>
