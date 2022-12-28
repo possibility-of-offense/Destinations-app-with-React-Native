@@ -3,7 +3,7 @@ import { useDeviceOrientation } from "@react-native-community/hooks";
 import { useContext, useEffect, useState } from "react";
 
 // React native
-import { View, Text, Image, ScrollView, Switch } from "react-native";
+import { View, Text, Image, ScrollView, Switch, Button } from "react-native";
 
 // Components
 import Card from "../Cards/Card";
@@ -17,7 +17,30 @@ import PrimaryButton from "../Buttons/PrimaryButton.android";
 
 // Colors
 import colors from "../../config/colors";
-import { ThemeContext } from "../../App";
+import { ThemeContext } from "../Context/ThemeContext";
+import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+
+const Drawer = createDrawerNavigator();
+
+function HomeScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Button
+        onPress={() => navigation.navigate("Notifications")}
+        title="Go to notifications"
+      />
+    </View>
+  );
+}
+
+function NotificationsScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Button onPress={() => navigation.goBack()} title="Go back home" />
+    </View>
+  );
+}
 
 const Home = ({ navigation }) => {
   const orientation = useDeviceOrientation();
@@ -55,6 +78,12 @@ const Home = ({ navigation }) => {
 
   return (
     <View style={styles.mainContainer}>
+      {/* <View style={{ backgroundColor: "orange", height: 750 }}>
+        <Drawer.Navigator initialRouteName="Homee">
+          <Drawer.Screen name="Homee" component={HomeScreen} />
+          <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+        </Drawer.Navigator>
+      </View> */}
       <ScrollView>
         <View style={styles.homeContainer}>
           <Text style={styles.homeContainerHeading}>
