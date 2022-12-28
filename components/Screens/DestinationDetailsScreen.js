@@ -20,6 +20,7 @@ import { destinationDetailsStyle } from "../styles/destinationDetailsStyle";
 
 // Colors
 import colors from "../../config/colors";
+import PrimaryButton from "../Buttons/PrimaryButton.android";
 
 const DestinationDetailsScreen = ({ navigation, route }) => {
   const orientation = useDeviceOrientation();
@@ -66,6 +67,20 @@ const DestinationDetailsScreen = ({ navigation, route }) => {
         <Text style={destinationDetailsStyle.description}>
           {detailsData.fullDescription}
         </Text>
+        <PrimaryButton
+          backgroundColor={colors.primaryDark}
+          textColor={colors.white}
+          underlayColor={colors.secondaryDark}
+          btnStyles={{ marginTop: 25 }}
+          onPress={() =>
+            navigation.navigate("Reviews", {
+              title: route.params.title,
+              id: detailsData.id,
+            })
+          }
+        >
+          Reviews
+        </PrimaryButton>
       </View>
 
       <View style={destinationDetailsStyle.galleryContainer}>

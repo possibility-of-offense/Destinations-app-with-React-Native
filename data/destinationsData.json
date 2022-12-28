@@ -130,5 +130,21 @@
         }
       ]
     }
-  ]
+  ],
+  "reviews": {
+    "1": [
+      {
+        "id": "review-1",
+        "name": "Brad Davids",
+        "text": "My wife and I decided to book our first trip with Destinations to the island of Bora Bora and specifically stay at the St. Regis Hotel as she’s always wanted to go there and stay in the over water bungalows. The pricing was way better than I expected and we have a butler for the week we are there over New Years thanks to our concierge. Chloe handled all the details including our flights, which I hate to do myself so I was happy that she took care of all the planning. Can’t wait for our trip!",
+        "image": "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      },
+      {
+        "id": "review-2",
+        "name": "Mariah Simpson",
+        "text": "Fantastic company with a fantastic product and customer service. My wife and I love to travel, and of course SAVE MONEY!!! The company's customer service is excellent and the deals they get are amazing. We had an issue with one of our trips and customer service took care of it no problem, 5 star rating for this company and can't wait for our next vacation!!!",
+        "image": "https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
+      }
+    ]
+  }
 }

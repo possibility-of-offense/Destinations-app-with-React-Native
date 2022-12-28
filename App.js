@@ -17,6 +17,7 @@ import colors from "./config/colors";
 import AllDestinationsScreen from "./components/Screens/AllDestinationsScreen";
 import DestinationDetailsScreen from "./components/Screens/DestinationDetailsScreen";
 import GalleryImageScreen from "./components/Screens/GalleryImageScreen";
+import ReviewsScreen from "./components/Screens/ReviewsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -90,6 +91,11 @@ export default function App() {
           name="Gallery Image"
           component={GalleryImageScreen}
           options={{ title: "Image" }}
+        />
+        <Stack.Screen
+          name="Reviews"
+          component={ReviewsScreen}
+          options={{ title: "Review" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

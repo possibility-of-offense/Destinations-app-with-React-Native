@@ -20,7 +20,7 @@ const GalleryImageScreen = ({ navigation, route }) => {
   const [gallery, setGallery] = useState([]);
   const [currentImage, setCurrentImage] = useState(null);
 
-  const [showPrev, setShowPrev] = useState(true);
+  const [showPrev, setShowPrev] = useState(false);
   const [showNext, setShowNext] = useState(true);
 
   useEffect(() => {

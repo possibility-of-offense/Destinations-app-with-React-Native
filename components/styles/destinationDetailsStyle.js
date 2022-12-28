@@ -23,7 +23,7 @@ const destinationDetailsStyle = StyleSheet.create({
   },
   galleryContainerHeadingWrapper: {
     padding: 10,
-    marginTop: 22,
+    marginTop: 12,
   },
   galleryContainerHeading: {
     fontSize: 17,
