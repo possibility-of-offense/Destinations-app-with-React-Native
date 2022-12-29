@@ -22,12 +22,14 @@ import PrimaryButton from "../Buttons/PrimaryButton.android";
 
 function ReviewsScreen({ navigation, route }) {
   const [reviews, setReviews] = useState([]);
+  const [title, setTitle] = useState("");
 
   // Set options title
   useEffect(() => {
     navigation.setOptions({
       title: `Reviews about ${route.params.title}`,
     });
+    setTitle(`Reviews about ${route.params.title}`);
     setReviews(data.reviews[route.params.id] || {});
   }, [route.params.id]);
 
@@ -55,7 +57,7 @@ function ReviewsScreen({ navigation, route }) {
       style={{ paddingTop: Constants.statusBarHeight - 35, flex: 1 }}
     >
       <Text style={reviewScreenStyle.heading}>
-        {reviews?.length > 0 ? "Reviews" : "No reviews yet"}
+        {reviews?.length > 0 ? title : "No reviews yet"}
       </Text>
       <View style={{ flex: 1 }}>
         <FlatList

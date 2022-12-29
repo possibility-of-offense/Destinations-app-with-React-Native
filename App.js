@@ -29,6 +29,7 @@ import { ThemeContext } from "./components/Context/ThemeContext";
 
 // Navigation ref
 import { navigationRef } from "./components/Screens/RootNavigation";
+import LoginScreen from "./components/Screens/LoginScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -159,6 +160,11 @@ const AppContainer = () => {
             name="Add review"
             component={AddReviewScreen}
             options={{ title: "Add review" }}
+          />
+          <Stack.Screen
+            name="Login"
+            component={LoginScreen}
+            options={{ title: "Login" }}
           />
         </Stack.Navigator>
       </ThemeContext.Provider>

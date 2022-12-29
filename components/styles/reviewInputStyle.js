@@ -14,6 +14,21 @@ export const reviewInputStyle = StyleSheet.create({
     fontSize: 12,
     textAlign: "center",
   },
+  loginBtn: {
+    fontSize: 12,
+    textAlign: "center",
+    marginBottom: 10,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  loginBtnText: {
+    marginTop: 6,
+    padding: 3,
+    paddingHorizontal: 14,
+    borderRadius: 20,
+    color: "#fff",
+    fontWeight: "bold",
+  },
   inputWrapper: {
     flexDirection: "row",
     justifyContent: "space-between",

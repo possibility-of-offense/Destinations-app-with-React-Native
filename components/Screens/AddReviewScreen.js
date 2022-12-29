@@ -82,9 +82,19 @@ const AddReviewScreen = ({ navigation, route }) => {
       <Text style={reviewInputStyle.subtitle}>
         If you're not logged in, the picture for your review will be random.
       </Text>
-      <Text style={[reviewInputStyle.subtitle, { marginBottom: 15 }]}>
-        Login from here
-      </Text>
+      <View style={[reviewInputStyle.loginBtn]}>
+        <Text
+          style={[
+            reviewInputStyle.loginBtnText,
+            { backgroundColor: colors.primaryGreen },
+          ]}
+          onPress={() => {
+            navigation.navigate("Login");
+          }}
+        >
+          Login from here
+        </Text>
+      </View>
       <Input
         val={fullName}
         setVal={setFullName}

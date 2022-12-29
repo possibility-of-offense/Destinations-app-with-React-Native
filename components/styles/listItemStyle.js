@@ -25,12 +25,13 @@ const listItemStyle = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     textDecorationLine: "underline",
+    marginRight: 5,
   },
   userInfoIconStar: {
     marginLeft: "auto",
   },
   userInfoClickHeadingIcon: {
-    top: 10,
+    top: 3,
     left: -4,
   },
   userReview: {

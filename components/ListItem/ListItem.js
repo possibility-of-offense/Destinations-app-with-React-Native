@@ -1,8 +1,8 @@
 // React hooks
-import { Fragment, useState } from "react";
+import { useState } from "react";
 
 // React native
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image } from "react-native";
 
 // Styles
 import { listItemStyle } from "../styles/listItemStyle";
@@ -31,23 +31,41 @@ function ListItem({ navigation, item }) {
       <Image style={listItemStyle.userImage} source={{ uri: item.image }} />
       <View style={listItemStyle.userInfo}>
         <View style={listItemStyle.userInfoNameAction}>
-          <TouchableOpacity
-            onPress={() =>
-              navigation.navigate("Reviews by user", {
-                id: item.id,
-                name: item.name,
-              })
-            }
-          >
-            <Text style={listItemStyle.userInfoName}>{item.name}</Text>
+          <View>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text
+                style={listItemStyle.userInfoName}
+                onPress={() =>
+                  navigation.navigate("Reviews by user", {
+                    id: item.id,
+                    name: item.name,
+                  })
+                }
+              >
+                {item.name}
+              </Text>
+              <MaterialCommunityIcons
+                name="cursor-pointer"
+                size={20}
+                color="#333"
+                style={listItemStyle.userInfoClickHeadingIcon}
+                onPress={() =>
+                  navigation.navigate("Reviews by user", {
+                    id: item.id,
+                    name: item.name,
+                  })
+                }
+              />
+            </View>
             <Text>rating: {item.rating}/6</Text>
-          </TouchableOpacity>
-          <MaterialCommunityIcons
-            name="cursor-pointer"
-            size={20}
-            color="#333"
-            style={listItemStyle.userInfoClickHeadingIcon}
-          />
+          </View>
+
           <MaterialCommunityIcons
             onPress={handleTemporaryLikingReview}
             name={fakeLiking ? "star" : "star-outline"}
