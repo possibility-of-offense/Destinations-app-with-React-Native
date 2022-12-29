@@ -17,6 +17,9 @@ import ListItem from "../ListItem/ListItem";
 // Colors
 import colors from "../../config/colors";
 
+// Components
+import PrimaryButton from "../Buttons/PrimaryButton.android";
+
 function ReviewsScreen({ navigation, route }) {
   const [reviews, setReviews] = useState([]);
 
@@ -52,10 +55,19 @@ function ReviewsScreen({ navigation, route }) {
                 backgroundColor: colors.primaryGreen,
               }}
             >
-              <Text>Separator</Text>
+              {/* <Text>Separator</Text> */}
             </View>
           )}
         />
+        <PrimaryButton
+          backgroundColor={colors.primaryGreen}
+          textColor={colors.white}
+          underlayColor={colors.secondaryGreen}
+          onPress={() => navigation.navigate("Add review")}
+          btnStyles={{ marginBottom: 20, marginHorizontal: 20 }}
+        >
+          Add Review
+        </PrimaryButton>
       </View>
     </SafeAreaView>
   );

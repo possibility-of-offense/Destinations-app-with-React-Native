@@ -48,7 +48,7 @@ export const allDesnationsStyles = StyleSheet.create({
     marginBottom: 5,
   },
   subtitle: {
-    color: colors.primaryGreen,
+    color: "#333",
     fontSize: 11,
   },
   checkButtonText: {

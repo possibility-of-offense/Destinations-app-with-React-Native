@@ -3,10 +3,12 @@
 // Hooks
 import { useDeviceOrientation } from "@react-native-community/hooks";
 import { Text, View } from "react-native";
+import React, { useState } from "react";
 
 // React navigation
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // Icons
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -21,25 +23,29 @@ import DestinationDetailsScreen from "./components/Screens/DestinationDetailsScr
 import GalleryImageScreen from "./components/Screens/GalleryImageScreen";
 import ReviewsScreen from "./components/Screens/ReviewsScreen";
 import ReviewsByUserScreen from "./components/Screens/ReviewsByUserScreen";
-import React, { useState } from "react";
+import AddReviewScreen from "./components/Screens/AddReviewScreen";
 
+// Context
 import { ThemeContext } from "./components/Context/ThemeContext";
 
+// Navigation ref
+import { navigationRef } from "./components/Screens/RootNavigation";
+
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
-export default function App() {
+const AppContainer = () => {
   const orientation = useDeviceOrientation();
-
   const [themeColor, setThemeColors] = useState(colors.white);
 
   return (
     <NavigationContainer
+      ref={navigationRef}
       theme={{
         ...DefaultTheme,
         colors: {
           ...DefaultTheme.colors,
           background: themeColor,
-          // background: "#57608a",
         },
       }}
     >
@@ -75,13 +81,46 @@ export default function App() {
                       color: colors.white,
                       marginTop: orientation.portrait ? 50 : 25,
                       marginLeft: 20,
-                      fontSize: 18,
+                      // fontSize: 18,
                       fontWeight: "bold",
+                      paddingRight: 40,
+                      // flexDirection: "row",
+                      // alignItems: "center",
+                      // justifyContent: "center",
+                      // flex: 1,
                     }}
                     onPress={() => props.navigation.pop()}
                   >
-                    <MaterialCommunityIcons name="chevron-left" size={18} />
-                    {props.options.title}
+                    <View
+                      style={{
+                        justifyContent: "center",
+                        alignItems: "center",
+                        left: 30,
+                      }}
+                    >
+                      <MaterialCommunityIcons
+                        name="chevron-left"
+                        size={30}
+                        color={colors.white}
+                        style={{ top: 3 }}
+                      />
+                    </View>
+
+                    <View
+                      style={{
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <Text
+                        style={{
+                          fontSize: 16,
+                          color: colors.white,
+                        }}
+                      >
+                        {props.options.title}
+                      </Text>
+                    </View>
                   </Text>
                 )}
               </View>
@@ -118,8 +157,64 @@ export default function App() {
             component={ReviewsByUserScreen}
             options={{ title: "Reviews by " }}
           />
+          <Stack.Screen
+            name="Add review"
+            component={AddReviewScreen}
+            options={{ title: "Add review" }}
+          />
         </Stack.Navigator>
       </ThemeContext.Provider>
+      <View
+        style={{
+          height: 50,
+          flexDirection: "row",
+          borderTopWidth: 1,
+          borderTopColor: "#ccc",
+        }}
+      >
+        <View
+          style={{
+            width: 100,
+            height: 50,
+            justifyContent: "center",
+            alignItems: "center",
+            borderRightWidth: 1,
+            borderRightColor: "#ccc",
+          }}
+        >
+          <MaterialCommunityIcons
+            onPress={() => navigationRef?.current?.navigate("Home")}
+            name="home"
+            size={20}
+            color="#333"
+          />
+        </View>
+        <View
+          style={{
+            width: 100,
+            height: 50,
+            justifyContent: "center",
+            alignItems: "center",
+            borderRightWidth: 1,
+            borderRightColor: "#ccc",
+          }}
+        >
+          <MaterialCommunityIcons
+            onPress={() => navigationRef?.current?.navigate("All Destinations")}
+            name="map"
+            size={20}
+            color="#333"
+          />
+        </View>
+      </View>
     </NavigationContainer>
+  );
+};
+
+export default function App() {
+  return (
+    <View style={{ flex: 1 }}>
+      <AppContainer />
+    </View>
   );
 }

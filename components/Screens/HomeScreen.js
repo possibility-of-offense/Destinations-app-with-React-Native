@@ -3,7 +3,7 @@ import { useDeviceOrientation } from "@react-native-community/hooks";
 import { useContext, useEffect, useState } from "react";
 
 // React native
-import { View, Text, Image, ScrollView, Switch, Button } from "react-native";
+import { View, Text, ScrollView, Switch, Button } from "react-native";
 
 // Components
 import Card from "../Cards/Card";
@@ -124,32 +124,6 @@ const Home = ({ navigation }) => {
               onValueChange={handleToggleBgBackground}
             />
           </View>
-        </View>
-        <View
-          style={[
-            styles.bottomFixedContainer,
-            { height: orientation.portrait ? 80 : "auto" },
-          ]}
-        >
-          <Image
-            style={{
-              width: orientation.portrait ? 60 : 45,
-              height: orientation.portrait ? 60 : 45,
-              borderRadius: orientation.portrait ? 30 : 22.5,
-            }}
-            source={require("../../assets/73138031.jpg")}
-          />
-          <Text
-            style={[
-              styles.bottomFixedContainerText,
-              {
-                fontSize: orientation.portrait ? 15 : 13,
-                marginLeft: orientation.portrait ? 15 : "auto",
-              },
-            ]}
-          >
-            Copyright &copy; - Ventsislav Iliev 2022
-          </Text>
         </View>
       </ScrollView>
     </View>

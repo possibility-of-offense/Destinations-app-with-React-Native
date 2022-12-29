@@ -6,7 +6,7 @@ const destinationDetailsStyle = StyleSheet.create({
     height: 150,
   },
   headingContainer: {
-    padding: 10,
+    padding: 20,
   },
   heading: {
     fontSize: 20,
@@ -15,7 +15,7 @@ const destinationDetailsStyle = StyleSheet.create({
   },
   description: {
     fontSize: 13,
-    lineHeight: 16,
+    lineHeight: 18,
   },
   galleryContainer: {
     flex: 1,

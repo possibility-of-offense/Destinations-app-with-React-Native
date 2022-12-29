@@ -18,8 +18,9 @@ export const cardComponentStyles = StyleSheet.create({
   cardHeading: {
     fontSize: 20,
     paddingBottom: 5,
+    textDecorationLine: "underline",
   },
   cardSubtitle: {
-    color: colors.primaryGreen,
+    color: "#333",
   },
 });
