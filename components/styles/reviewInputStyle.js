@@ -6,8 +6,13 @@ export const reviewInputStyle = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 20,
-    marginVertical: 10,
+    marginTop: 10,
+    marginBottom: 10,
     paddingHorizontal: 10,
+  },
+  subtitle: {
+    fontSize: 12,
+    textAlign: "center",
   },
   inputWrapper: {
     flexDirection: "row",
@@ -16,10 +21,11 @@ export const reviewInputStyle = StyleSheet.create({
     marginHorizontal: 20,
     backgroundColor: "#f4f4f4",
     borderRadius: 25,
-    padding: 10,
     marginVertical: 5,
+    paddingHorizontal: 8,
   },
   input: {
+    padding: 10,
     paddingLeft: 15,
     paddingRight: 30,
     flex: 1,
@@ -31,4 +37,11 @@ export const reviewInputStyle = StyleSheet.create({
     fontSize: 18,
   },
   inputDeleteTextIcon: { position: "absolute", right: 0 },
+  error: {
+    color: "red",
+    marginLeft: 26,
+    marginBottom: 5,
+    fontWeight: "bold",
+    letterSpacing: 1,
+  },
 });

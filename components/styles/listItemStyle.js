@@ -18,13 +18,20 @@ const listItemStyle = StyleSheet.create({
   },
   userInfoNameAction: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "flex-start",
     marginBottom: 6,
   },
   userInfoName: {
     fontSize: 16,
     fontWeight: "bold",
+    textDecorationLine: "underline",
+  },
+  userInfoIconStar: {
+    marginLeft: "auto",
+  },
+  userInfoClickHeadingIcon: {
+    top: 10,
+    left: -4,
   },
   userReview: {
     fontSize: 12.5,

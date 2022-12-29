@@ -139,7 +139,8 @@
         "text": "My wife and I decided to book our first trip with Destinations to the island of Bora Bora and specifically stay at the St. Regis Hotel as she’s always wanted to go there and stay in the over water bungalows. The pricing was way better than I expected and we have a butler for the week we are there over New Years thanks to our concierge. Chloe handled all the details including our flights, which I hate to do myself so I was happy that she took care of all the planning. Can’t wait for our trip!",
         "image": "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "destination": "Val Thorens - France",
-        "destinationId": 1
+        "destinationId": 1,
+        "rating": 6
       },
       {
         "id": "mariah-simpson-1",
@@ -147,7 +148,8 @@
         "text": "Fantastic company with a fantastic product and customer service. My wife and I love to travel, and of course SAVE MONEY!!! The company's customer service is excellent and the deals they get are amazing. We had an issue with one of our trips and customer service took care of it no problem, 5 star rating for this company and can't wait for our next vacation!!!",
         "image": "https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80",
         "destination": "Val Thorens - France",
-        "destinationId": 1
+        "destinationId": 1,
+        "rating": 6
       }
     ],
     "2": [
@@ -157,7 +159,8 @@
         "text": "Great Experience, this tour is the best option to know Abu Dhabi with a great guide and optimising the time. Very complete tour. The explanations from the guide have been useful and correct. Totally recommended.",
         "image": "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "destination": "Val Gardena - Italy",
-        "destinationId": 2
+        "destinationId": 2,
+        "rating": 6
       },
       {
         "id": "nicole-keith-1",
@@ -165,7 +168,8 @@
         "text": "I booked this company for a trip to Abu Dabi, trip was great , Zee the staff was very knowledgeable, patience, and took great pictures of everyone . Trip consisted of going to the presidencial palace, Sheik Zayed mushed and downtown. Great if you want to get to see beyond Dubai.",
         "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
         "destination": "Val Gardena - Italy",
-        "destinationId": 2
+        "destinationId": 2,
+        "rating": 6
       },
       {
         "id": "george-smith-1",
@@ -173,7 +177,8 @@
         "text": "Awesome tour 💯 Ian was our tour guide and was absolutely amazing, had us all laughing…if you are visiting Oahu, you need to check these guys out. 10 out of 10- do recommend 🤙🏽",
         "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
         "destination": "Val Gardena - Italy",
-        "destinationId": 2
+        "destinationId": 2,
+        "rating": 6
       },
       {
         "id": "amanda-susan-1",
@@ -181,7 +186,8 @@
         "text": "A great tour from start to finish! You will definitely enjoy all the stops! Ian was our tour guide and his knowledge and sense of humor added to the value of the tour!",
         "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=461&q=80",
         "destination": "Val Gardena - Italy",
-        "destinationId": 2
+        "destinationId": 2,
+        "rating": 6
       }
     ],
     "3": [
@@ -191,7 +197,8 @@
         "text": "A great experience and our guide Gamal was so helpful and friendly. We loved it! Would recommend to anyone visiting Dubai.",
         "image": "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "destination": "Zermatt - Switzerland",
-        "destinationId": 3
+        "destinationId": 3,
+        "rating": 6
       },
       {
         "id": "magda-zusanoff-1",
@@ -199,7 +206,8 @@
         "text": "We spent the day with Ray who did a wonderful job showing us the sights of Oahu. He went above and beyond what we expected, going out of his way to see that we had an enjoyable time, including some unique food experiences.",
         "image": "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1153&q=80",
         "destination": "Zermatt - Switzerland",
-        "destinationId": 3
+        "destinationId": 3,
+        "rating": 6
       },
       {
         "id": "magda-romanoff-1",
@@ -207,7 +215,8 @@
         "text": "Fabulous tour guide. Very knowledgeable, courteous and helpful. In addition to the island tour we requested, he took us to several local places we would not have known about. Ask for Ray",
         "image": "https://images.unsplash.com/photo-1542206395-9feb3edaa68d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
         "destination": "Zermatt - Switzerland",
-        "destinationId": 3
+        "destinationId": 3,
+        "rating": 6
       },
       {
         "id": "pete-johnson-1",
@@ -215,7 +224,8 @@
         "text": "My wife and I had a stellar experience during our tour on the North Shore Beach Bus. Ian was our driver, and I'm so thankful he was. He just oozes charisma and personality, and will personally make sure you're having the time of your life. Seriously, if I had kids, I'd hit him up to be their Godfather. In addition to taking us to see amazing sights, Ian shared his depthful knowledge of the island and Hawaiian history. It wasn't just that he was knowledgeable, it's super clear that history matters to him. He's also on point with food recommendations, and I want to echo his reco to get the #8 at Fumis for lunch. 10/10 would recommend!",
         "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
         "destination": "Zermatt - Switzerland",
-        "destinationId": 3
+        "destinationId": 3,
+        "rating": 6
       },
       {
         "id": "brit-johnson-1",
@@ -223,7 +233,8 @@
         "text": "Our driver was very good fun and I enjoyed the trip very much. I'm just sorry that the only day I could go was a Monday so I did not get to hike to the falls. I love the ocean and very much enjoyed the beach and loved seeing the turtles while paddle boarding, A friend took a similar bus trip in the past and was the inspiration for this trip. I only had one full leisure day on Oahu and no car. Hope to be back again soon.",
         "image": "https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "destination": "Zermatt - Switzerland",
-        "destinationId": 3
+        "destinationId": 3,
+        "rating": 6
       },
       {
         "id": "marius-kolwski-1",
@@ -231,7 +242,8 @@
         "text": "I had a wonderful experience. Ian was entertaining, engaging, and had a wealth of knowledge about the island!",
         "image": "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
         "destination": "Zermatt - Switzerland",
-        "destinationId": 3
+        "destinationId": 3,
+        "rating": 6
       }
     ],
     "4": [
@@ -241,7 +253,8 @@
         "text": "Great tour! So glad we booked this and would not have been able to do any of it on our own in such a short amount of time. Punctual pick up. Comfortable bus. Our guide, Hassan, was very friendly and knowledgeable. He taught us so much about the culture and the sites we visited. Must do! Don’t skip this.",
         "image": "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "destination": "Sölden - Austria",
-        "destinationId": 4
+        "destinationId": 4,
+        "rating": 6
       }
     ],
     "5": [
@@ -251,7 +264,8 @@
         "text": "Fantastic company with a fantastic product and customer service. My wife and I love to travel, and of course SAVE MONEY!!! The company's customer service is excellent and the deals they get are amazing. We had an issue with one of our trips and customer service took care of it no problem, 5 star rating for this company and can't wait for our next vacation!!!",
         "image": "https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80",
         "destination": "Gdansk - Poland",
-        "destinationId": 5
+        "destinationId": 5,
+        "rating": 6
       },
       {
         "id": "marius-kolwski-1",
@@ -259,7 +273,8 @@
         "text": "I had a wonderful experience. Ian was entertaining, engaging, and had a wealth of knowledge about the island!",
         "image": "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
         "destination": "Gdansk - Poland",
-        "destinationId": 5
+        "destinationId": 5,
+        "rating": 6
       },
       {
         "id": "brit-johnson-1",
@@ -267,7 +282,8 @@
         "text": "Our driver was very good fun and I enjoyed the trip very much. I'm just sorry that the only day I could go was a Monday so I did not get to hike to the falls. I love the ocean and very much enjoyed the beach and loved seeing the turtles while paddle boarding, A friend took a similar bus trip in the past and was the inspiration for this trip. I only had one full leisure day on Oahu and no car. Hope to be back again soon.",
         "image": "https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "destination": "Gdansk - Poland",
-        "destinationId": 5
+        "destinationId": 5,
+        "rating": 6
       }
     ]
   }

@@ -40,12 +40,20 @@ function ListItem({ navigation, item }) {
             }
           >
             <Text style={listItemStyle.userInfoName}>{item.name}</Text>
+            <Text>rating: {item.rating}/6</Text>
           </TouchableOpacity>
+          <MaterialCommunityIcons
+            name="cursor-pointer"
+            size={20}
+            color="#333"
+            style={listItemStyle.userInfoClickHeadingIcon}
+          />
           <MaterialCommunityIcons
             onPress={handleTemporaryLikingReview}
             name={fakeLiking ? "star" : "star-outline"}
             size={24}
             color="gold"
+            style={listItemStyle.userInfoIconStar}
           />
         </View>
         <Text style={listItemStyle.userReview}>
@@ -53,6 +61,7 @@ function ListItem({ navigation, item }) {
             ? originalReview
             : cutReview}
         </Text>
+
         {item.text.split(" ").length > 30 && (
           <Text onPress={handleTogglingReviewContent} style={{ marginTop: 15 }}>
             <View

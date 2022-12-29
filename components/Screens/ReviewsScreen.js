@@ -33,7 +33,7 @@ function ReviewsScreen({ navigation, route }) {
 
   useEffect(() => {
     if (route.params?.review && Object.keys(route.params.review).length > 0) {
-      const { name, content, id, title } = route.params.review;
+      const { name, content, rating, id, title } = route.params.review;
 
       setReviews((prev) =>
         prev.concat({
@@ -44,6 +44,7 @@ function ReviewsScreen({ navigation, route }) {
             "https://images.unsplash.com/photo-1453574503519-1ae2536262ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
           destination: title,
           destinationId: id,
+          rating,
         })
       );
     }
@@ -77,17 +78,26 @@ function ReviewsScreen({ navigation, route }) {
             </View>
           )}
         />
-        <PrimaryButton
-          backgroundColor={colors.primaryGreen}
-          textColor={colors.white}
-          underlayColor={colors.secondaryGreen}
-          onPress={() =>
-            navigation.navigate("Add review", { id: route.params.id })
-          }
-          btnStyles={{ marginBottom: 20, marginHorizontal: 20 }}
+        <View
+          style={{
+            justifyContent: "center",
+
+            backgroundColor: colors.primaryDark,
+            padding: 6,
+          }}
         >
-          Add Review
-        </PrimaryButton>
+          <PrimaryButton
+            backgroundColor={colors.primaryGreen}
+            textColor={colors.white}
+            underlayColor={colors.secondaryGreen}
+            onPress={() =>
+              navigation.navigate("Add review", { id: route.params.id })
+            }
+            btnStyles={{ marginHorizontal: 20 }}
+          >
+            Add Review
+          </PrimaryButton>
+        </View>
       </View>
     </SafeAreaView>
   );

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 // Components
 import Input from "../Inputs/Input";
+import AppPicker from "../Picker/AppPicker";
 
 // Styles
 import { reviewInputStyle } from "../styles/reviewInputStyle";
@@ -17,11 +18,37 @@ import data from "../../data/destinationsData.json";
 import colors from "../../config/colors";
 import PrimaryButton from "../Buttons/PrimaryButton.android";
 
+const ratingData = [1, 2, 3, 4, 5, 6];
+
 const AddReviewScreen = ({ navigation, route }) => {
   const [fullName, setFullName] = useState("");
+  const [fullNameError, setFullNameError] = useState(null);
   const [content, setContent] = useState("");
+  const [contentError, setContentError] = useState(null);
+  const [rating, setRating] = useState(0);
+  const [ratingError, setRatingError] = useState(null);
 
   const [title, setTitle] = useState("");
+
+  useEffect(() => {
+    if (fullNameError === null && contentError === null && ratingError === null)
+      return;
+
+    if (fullName) setFullNameError("");
+    else {
+      setFullNameError("Enter full name");
+    }
+
+    if (content) setContentError("");
+    else {
+      setContentError("Enter content");
+    }
+
+    if (rating || rating > 0) setRatingError("");
+    else {
+      setRatingError("Pick a rating");
+    }
+  }, [fullName, content, rating]);
 
   useEffect(() => {
     const findById = data.destinations[route.params.id];
@@ -36,14 +63,27 @@ const AddReviewScreen = ({ navigation, route }) => {
     const review = {
       name: fullName,
       content,
+      rating,
     };
-    navigation.navigate("Reviews", { review, id: route.params.id, title });
+    if (review.name && review.content && review.rating) {
+      navigation.navigate("Reviews", { review, id: route.params.id, title });
+    } else {
+      if (!fullName) setFullNameError("Enter full name");
+      if (!content) setContentError("Enter content");
+      if (!rating || rating === 0) setRatingError("Pick a rating");
+    }
   };
 
   return (
     <View style={{ flex: 1 }}>
       <Text style={reviewInputStyle.heading}>
         Add review {title ? `for ${title}` : ""}
+      </Text>
+      <Text style={reviewInputStyle.subtitle}>
+        If you're not logged in, the picture for your review will be random.
+      </Text>
+      <Text style={[reviewInputStyle.subtitle, { marginBottom: 15 }]}>
+        Login from here
       </Text>
       <Input
         val={fullName}
@@ -52,6 +92,9 @@ const AddReviewScreen = ({ navigation, route }) => {
         placeholder="Your Name"
         icon="face-man"
       />
+      {fullNameError && fullNameError !== null && (
+        <Text style={reviewInputStyle.error}>{fullNameError}</Text>
+      )}
       <Input
         val={content}
         setVal={setContent}
@@ -59,6 +102,13 @@ const AddReviewScreen = ({ navigation, route }) => {
         placeholder="Review"
         icon="pencil"
       />
+      {contentError && contentError !== null && (
+        <Text style={reviewInputStyle.error}>{contentError}</Text>
+      )}
+      <AppPicker data={ratingData} rating={rating} setRating={setRating} />
+      {ratingError && ratingError !== null && (
+        <Text style={reviewInputStyle.error}>{ratingError}</Text>
+      )}
       <PrimaryButton
         backgroundColor={colors.primaryGreen}
         textColor={colors.white}

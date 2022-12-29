@@ -172,7 +172,7 @@ const AppContainer = () => {
       >
         <View
           style={{
-            width: 100,
+            width: 85,
             height: 50,
             justifyContent: "center",
             alignItems: "center",
@@ -189,7 +189,7 @@ const AppContainer = () => {
         </View>
         <View
           style={{
-            width: 100,
+            width: 85,
             height: 50,
             justifyContent: "center",
             alignItems: "center",

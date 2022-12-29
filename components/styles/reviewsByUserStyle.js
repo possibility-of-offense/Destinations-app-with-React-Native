@@ -29,13 +29,14 @@ export const reviewsByUserStyle = StyleSheet.create({
   listItem: {
     padding: 10,
     flexDirection: "row",
-    justifyContent: "space-between",
+    // justifyContent: "space-around",
     alignItems: "center",
   },
   listItemContent: {
     color: colors.white,
     fontSize: 13,
     letterSpacing: 0.2,
+    marginLeft: 7,
   },
   listItemContentDestinationUrl: {
     textDecorationLine: "underline",

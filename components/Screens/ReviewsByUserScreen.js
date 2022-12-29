@@ -20,7 +20,7 @@ import { reviewsByUserStyle } from "../styles/reviewsByUserStyle";
 import colors from "../../config/colors";
 
 // React Native
-import { TouchableOpacity, TouchableHighlight } from "react-native";
+import { TouchableHighlight } from "react-native";
 
 // Icons
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -73,6 +73,11 @@ const ReviewsByUserScreen = ({ navigation, route }) => {
               )}
             >
               <View style={reviewsByUserStyle.listItem}>
+                <MaterialCommunityIcons
+                  name="gesture-swipe"
+                  size={24}
+                  color={colors.white}
+                />
                 <Text
                   //   key={item.id + "-" + item.destination}
                   style={reviewsByUserStyle.listItemContent}
@@ -90,44 +95,11 @@ const ReviewsByUserScreen = ({ navigation, route }) => {
                     {item.destination}
                   </Text>
                 </Text>
-                <MaterialCommunityIcons
-                  name="gesture-swipe-left"
-                  size={24}
-                  color={colors.white}
-                />
               </View>
             </Swipeable>
           )}
         ></FlatList>
       </GestureHandlerRootView>
-      {/* {reviews?.map((el) => (
-          <GestureHandlerRootView key={el.id}>
-            <Swipeable
-              renderRightActions={() => (
-                <TouchableOpacity
-                  style={{ backgroundColor: "pink", padding: 6 }}
-                  onPress={() => navigation.navigate("Home")}
-                >
-                  <Text style={{ fontSize: 20, fontWeight: "bold" }}>Text</Text>
-                </TouchableOpacity>
-              )}
-            >
-              <Text key={el.id} style={{ height: 50 }}>
-                Review by {el.name} for{" "}
-                <Text
-                  onPress={() =>
-                    navigation.navigate("Destination Details", {
-                      id: el.id,
-                      title: el.destination,
-                    })
-                  }
-                >
-                  {el.destination}
-                </Text>
-              </Text>
-            </Swipeable>
-          </GestureHandlerRootView>
-        ))} */}
     </SafeAreaView>
   );
 };
