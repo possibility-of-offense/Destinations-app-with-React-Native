@@ -1,57 +1,73 @@
 // React native
-import { View, Text, TextInput } from "react-native";
+import { View, Text } from "react-native";
 
 // React hooks
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-// Icons
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+// Components
+import Input from "../Inputs/Input";
 
-const AddReviewScreen = ({ navigation }) => {
-  const [firstName, setFirstName] = useState("");
+// Styles
+import { reviewInputStyle } from "../styles/reviewInputStyle";
+
+// Data
+import data from "../../data/destinationsData.json";
+
+// Colors
+import colors from "../../config/colors";
+import PrimaryButton from "../Buttons/PrimaryButton.android";
+
+const AddReviewScreen = ({ navigation, route }) => {
+  const [fullName, setFullName] = useState("");
+  const [content, setContent] = useState("");
+
+  const [title, setTitle] = useState("");
+
+  useEffect(() => {
+    const findById = data.destinations[route.params.id];
+
+    if (findById) {
+      setTitle(findById.name);
+    }
+  }, []);
+
+  // Handle Add Review
+  const handleAddReview = () => {
+    const review = {
+      name: fullName,
+      content,
+    };
+    navigation.navigate("Reviews", { review, id: route.params.id, title });
+  };
 
   return (
     <View style={{ flex: 1 }}>
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginHorizontal: 20,
-          backgroundColor: "#f4f4f4",
-          borderRadius: 25,
-          padding: 10,
-          marginVertical: 10,
-        }}
+      <Text style={reviewInputStyle.heading}>
+        Add review {title ? `for ${title}` : ""}
+      </Text>
+      <Input
+        val={fullName}
+        setVal={setFullName}
+        styles={reviewInputStyle}
+        placeholder="Your Name"
+        icon="face-man"
+      />
+      <Input
+        val={content}
+        setVal={setContent}
+        styles={reviewInputStyle}
+        placeholder="Review"
+        icon="pencil"
+      />
+      <PrimaryButton
+        backgroundColor={colors.primaryGreen}
+        textColor={colors.white}
+        underlayColor={colors.secondaryGreen}
+        onPress={handleAddReview}
+        btnStyles={{ marginBottom: 20, marginHorizontal: 20, marginTop: 10 }}
       >
-        <MaterialCommunityIcons name="face-man" color="#333" size={24} />
-        <View
-          style={{
-            paddingLeft: 15,
-            paddingRight: 30,
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <TextInput
-            value={firstName}
-            onChangeText={(text) => setFirstName(text)}
-            placeholder="First name"
-            style={{ fontSize: 18 }}
-          />
-          {firstName && (
-            <MaterialCommunityIcons
-              onPress={() => setFirstName("")}
-              name="close-circle"
-              color="#333"
-              size={24}
-              style={{ position: "absolute", right: 0 }}
-            />
-          )}
-        </View>
-      </View>
+        Add Review
+      </PrimaryButton>
     </View>
   );
 };

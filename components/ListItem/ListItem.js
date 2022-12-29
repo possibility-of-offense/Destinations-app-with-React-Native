@@ -49,38 +49,42 @@ function ListItem({ navigation, item }) {
           />
         </View>
         <Text style={listItemStyle.userReview}>
-          {showFullReview ? originalReview : cutReview}
+          {showFullReview || item.text.split(" ").length < 30
+            ? originalReview
+            : cutReview}
         </Text>
-        <Text onPress={handleTogglingReviewContent} style={{ marginTop: 15 }}>
-          <View
-            style={[
-              listItemStyle.iconActionWrapper,
-              { backgroundColor: colors.primaryGreen },
-            ]}
-          >
-            <Text
+        {item.text.split(" ").length > 30 && (
+          <Text onPress={handleTogglingReviewContent} style={{ marginTop: 15 }}>
+            <View
               style={[
-                listItemStyle.iconActionText,
-                { color: colors.primaryDark },
+                listItemStyle.iconActionWrapper,
+                { backgroundColor: colors.primaryGreen },
               ]}
             >
-              {showFullReview ? "Show less content" : "Show full content"}
-            </Text>
-            {showFullReview ? (
-              <MaterialCommunityIcons
-                name="chevron-up-box"
-                size={24}
-                color={colors.primaryDark}
-              />
-            ) : (
-              <MaterialCommunityIcons
-                name="chevron-down-box"
-                size={24}
-                color={colors.primaryDark}
-              />
-            )}
-          </View>
-        </Text>
+              <Text
+                style={[
+                  listItemStyle.iconActionText,
+                  { color: colors.primaryDark },
+                ]}
+              >
+                {showFullReview ? "Show less content" : "Show full content"}
+              </Text>
+              {showFullReview ? (
+                <MaterialCommunityIcons
+                  name="chevron-up-box"
+                  size={24}
+                  color={colors.primaryDark}
+                />
+              ) : (
+                <MaterialCommunityIcons
+                  name="chevron-down-box"
+                  size={24}
+                  color={colors.primaryDark}
+                />
+              )}
+            </View>
+          </Text>
+        )}
       </View>
     </View>
   );

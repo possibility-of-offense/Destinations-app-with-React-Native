@@ -8,7 +8,6 @@ import React, { useState } from "react";
 // React navigation
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // Icons
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -32,7 +31,6 @@ import { ThemeContext } from "./components/Context/ThemeContext";
 import { navigationRef } from "./components/Screens/RootNavigation";
 
 const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
 
 const AppContainer = () => {
   const orientation = useDeviceOrientation();
@@ -205,6 +203,19 @@ const AppContainer = () => {
             size={20}
             color="#333"
           />
+        </View>
+        <View
+          style={{
+            flex: 1,
+            height: 50,
+            justifyContent: "center",
+            alignItems: "center",
+            borderRightWidth: 1,
+            borderRightColor: "#ccc",
+          }}
+        >
+          <Text>Contact me on</Text>
+          <Text style={{ fontWeight: "bold" }}>ventsi.iliev90@gmail.com</Text>
         </View>
       </View>
     </NavigationContainer>

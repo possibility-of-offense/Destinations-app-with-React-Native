@@ -31,6 +31,24 @@ function ReviewsScreen({ navigation, route }) {
     setReviews(data.reviews[route.params.id] || {});
   }, [route.params.id]);
 
+  useEffect(() => {
+    if (route.params?.review && Object.keys(route.params.review).length > 0) {
+      const { name, content, id, title } = route.params.review;
+
+      setReviews((prev) =>
+        prev.concat({
+          id: name.split(" ").join("-").toLowerCase(),
+          name: name,
+          text: content,
+          image:
+            "https://images.unsplash.com/photo-1453574503519-1ae2536262ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          destination: title,
+          destinationId: id,
+        })
+      );
+    }
+  }, [route.params.review]);
+
   return (
     <SafeAreaView
       style={{ paddingTop: Constants.statusBarHeight - 35, flex: 1 }}
@@ -63,7 +81,9 @@ function ReviewsScreen({ navigation, route }) {
           backgroundColor={colors.primaryGreen}
           textColor={colors.white}
           underlayColor={colors.secondaryGreen}
-          onPress={() => navigation.navigate("Add review")}
+          onPress={() =>
+            navigation.navigate("Add review", { id: route.params.id })
+          }
           btnStyles={{ marginBottom: 20, marginHorizontal: 20 }}
         >
           Add Review
