@@ -45,7 +45,7 @@ const DestinationDetailsScreen = ({ navigation, route }) => {
   // Content change
   const handleContentChange = (width, height) => {
     scrollViewRef.current?.scrollTo({
-      y: showGallery ? 300 : 0,
+      y: showGallery ? 500 : 0,
       x: 0,
       animated: true,
     });
