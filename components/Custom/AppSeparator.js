@@ -4,7 +4,7 @@ import { View, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   separator: {
-    marginVertical: 10,
+    paddingVertical: 10,
   },
 });
 

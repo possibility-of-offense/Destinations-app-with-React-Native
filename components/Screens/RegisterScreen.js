@@ -7,7 +7,6 @@ import { useContext } from "react";
 // Components
 import PrimaryButton from "../Buttons/PrimaryButton.android";
 import RegisterInput from "../Inputs/RegisterInput";
-import AppSeparator from "../Custom/AppSeparator";
 
 // Icons
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -51,6 +50,7 @@ const RegisterScreen = ({ navigation, route }) => {
   const authContext = useContext(AuthContext);
 
   const checkForErrors = useCallback((errors, error) => {
+    console.log(errors[error]);
     return errors[error] ? true : false;
   }, []);
 
@@ -91,9 +91,18 @@ const RegisterScreen = ({ navigation, route }) => {
           onSubmit={handleSubmit}
           validationSchema={validationSchema}
         >
-          {({ handleChange, handleSubmit, errors, values, resetForm }) => (
+          {({
+            handleChange,
+            handleSubmit,
+            errors,
+            values,
+            resetForm,
+            setFieldTouched,
+            touched,
+          }) => (
             <>
               <RegisterInput
+                checkForErrors={() => checkForErrors(errors, "fullname")}
                 error={errors.fullname}
                 handleChange={handleChange("fullname")}
                 label="Enter fullname/username"
@@ -109,11 +118,13 @@ const RegisterScreen = ({ navigation, route }) => {
                     errors,
                   })
                 }
+                setFieldTouched={() => setFieldTouched("fullname")}
                 styles={{ ...registerStyle, textColor: colors.secondaryDark }}
                 value={values.fullname}
+                touched={touched.fullname}
               />
-              {!checkForErrors(errors, "fullname") && <AppSeparator />}
               <RegisterInput
+                checkForErrors={() => checkForErrors(errors, "password")}
                 error={errors.password}
                 handleChange={handleChange("password")}
                 label="Enter password"
@@ -129,11 +140,14 @@ const RegisterScreen = ({ navigation, route }) => {
                     errors,
                   })
                 }
+                setFieldTouched={() => setFieldTouched("password")}
                 styles={registerStyle}
                 value={values.password}
+                touched={touched.password}
+                secureTextEntry={true}
               />
-              {!checkForErrors(errors, "password") && <AppSeparator />}
               <RegisterInput
+                checkForErrors={() => checkForErrors(errors, "repeatPassword")}
                 error={errors.repeatPassword}
                 handleChange={handleChange("repeatPassword")}
                 label="Repeat password"
@@ -151,8 +165,10 @@ const RegisterScreen = ({ navigation, route }) => {
                 }
                 styles={registerStyle}
                 value={values.repeatPassword}
+                setFieldTouched={() => setFieldTouched("repeatPassword")}
+                touched={touched.repeatPassword}
+                secureTextEntry={true}
               />
-              {!checkForErrors(errors, "url") && <AppSeparator />}
               <RegisterInput
                 error={errors.url}
                 handleChange={handleChange("url")}
@@ -169,8 +185,10 @@ const RegisterScreen = ({ navigation, route }) => {
                     errors,
                   })
                 }
+                setFieldTouched={() => setFieldTouched("url")}
                 styles={registerStyle}
                 value={values.url}
+                touched={touched.url}
               />
 
               <PrimaryButton

@@ -18,10 +18,6 @@ import PrimaryButton from "../Buttons/PrimaryButton.android";
 // Colors
 import colors from "../../config/colors";
 import { ThemeContext } from "../Context/ThemeContext";
-import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-
-const Drawer = createDrawerNavigator();
 
 function HomeScreen({ navigation }) {
   return (
@@ -78,12 +74,6 @@ const Home = ({ navigation }) => {
 
   return (
     <View style={styles.mainContainer}>
-      {/* <View style={{ backgroundColor: "orange", height: 750 }}>
-        <Drawer.Navigator initialRouteName="Homee">
-          <Drawer.Screen name="Homee" component={HomeScreen} />
-          <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-        </Drawer.Navigator>
-      </View> */}
       <ScrollView>
         <View style={styles.homeContainer}>
           <Text style={styles.homeContainerHeading}>

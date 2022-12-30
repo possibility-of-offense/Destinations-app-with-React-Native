@@ -30,6 +30,12 @@ const AppPicker = ({ data, rating: ratingParent, setRating }) => {
     <>
       <TouchableWithoutFeedback onPress={() => setShowModal(true)}>
         <View style={inputWrapper}>
+          <MaterialCommunityIcons
+            name="star-outline"
+            size={24}
+            color="black"
+            style={{ marginLeft: 10 }}
+          />
           <View style={input}>
             <Text style={{ fontSize: 18, color: "#a8a7a7" }}>
               {ratingParent === 0 ? "Rating" : ratingParent}

@@ -4,7 +4,11 @@ import { View, TextInput, Text } from "react-native";
 // Icons
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+// Components
+import AppSeparator from "../Custom/AppSeparator";
+
 const RegisterInput = ({
+  checkForErrors,
   error,
   handleChange,
   label,
@@ -12,6 +16,9 @@ const RegisterInput = ({
   resetSpecificField,
   styles,
   value,
+  setFieldTouched,
+  secureTextEntry,
+  touched,
 }) => {
   // Clear input
   const handleIconClick = () => {
@@ -28,7 +35,9 @@ const RegisterInput = ({
           autoCorrect={false}
           placeholder={placeholder}
           onChangeText={handleChange}
+          onBlur={() => setFieldTouched()}
           value={value}
+          secureTextEntry={secureTextEntry}
         />
         <MaterialCommunityIcons
           name="close-circle"
@@ -38,7 +47,11 @@ const RegisterInput = ({
         />
       </View>
 
-      {error && <Text style={styles.error}>{error}</Text>}
+      {touched && checkForErrors && checkForErrors() ? (
+        <Text style={styles.error}>{error}</Text>
+      ) : (
+        <AppSeparator />
+      )}
     </View>
   );
 };

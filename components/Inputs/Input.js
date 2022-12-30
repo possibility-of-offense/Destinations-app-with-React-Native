@@ -8,7 +8,12 @@ const Input = ({ val, setVal, styles, placeholder, icon }) => {
   const { inputWrapper, input, inputIcon, inputDeleteTextIcon } = styles;
   return (
     <View style={inputWrapper}>
-      <MaterialCommunityIcons name={icon} color="#333" size={24} />
+      <MaterialCommunityIcons
+        name={icon}
+        color="#333"
+        size={24}
+        style={{ marginLeft: 10 }}
+      />
       <View style={input}>
         <TextInput
           value={val}
