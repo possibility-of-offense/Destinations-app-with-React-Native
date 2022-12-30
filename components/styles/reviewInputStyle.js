@@ -14,14 +14,14 @@ export const reviewInputStyle = StyleSheet.create({
     fontSize: 12,
     textAlign: "center",
   },
-  loginBtn: {
+  registerBtn: {
     fontSize: 12,
     textAlign: "center",
     marginBottom: 10,
     justifyContent: "center",
     alignItems: "center",
   },
-  loginBtnText: {
+  registerBtnText: {
     marginTop: 6,
     padding: 3,
     paddingHorizontal: 14,
@@ -58,5 +58,11 @@ export const reviewInputStyle = StyleSheet.create({
     marginBottom: 5,
     fontWeight: "bold",
     letterSpacing: 1,
+  },
+  fullname: {
+    marginLeft: 30,
+    fontSize: 17,
+    fontWeight: "bold",
+    marginVertical: 10,
   },
 });

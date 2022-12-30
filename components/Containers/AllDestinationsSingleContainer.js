@@ -2,7 +2,7 @@
 import { useDeviceOrientation } from "@react-native-community/hooks";
 
 // React native
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableWithoutFeedback } from "react-native";
 import PrimaryButton from "../Buttons/PrimaryButton.android";
 
 // Styles
@@ -27,14 +27,22 @@ const AllDestinationsSingleContainer = ({
     <View
       style={[
         allDesnationsStyles.container,
-        { width: orientation.portrait ? "48%" : "28%" },
+        { width: orientation.portrait ? "100%" : "48%" },
       ]}
     >
-      <Image
-        source={{ uri: imgPath }}
-        resizeMode="cover"
-        style={allDesnationsStyles.img}
-      />
+      <TouchableWithoutFeedback
+        onPress={handleNavigateDestinationDetails.bind(
+          null,
+          destinationsData.id,
+          destinationsData.name
+        )}
+      >
+        <Image
+          source={{ uri: imgPath }}
+          resizeMode="cover"
+          style={allDesnationsStyles.img}
+        />
+      </TouchableWithoutFeedback>
       <View style={allDesnationsStyles.textContainer}>
         <View>
           <Text

@@ -21,12 +21,6 @@ const ListItemRating = ({ children, cbs }) => {
       >
         {children}
       </Text>
-      <MaterialCommunityIcons
-        name="star-outline"
-        size={34}
-        color="gold"
-        onPress={handleCallbacks}
-      />
     </View>
   );
 };

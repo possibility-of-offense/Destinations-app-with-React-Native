@@ -2,7 +2,7 @@
 import { View, Text } from "react-native";
 
 // React hooks
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 // Components
 import Input from "../Inputs/Input";
@@ -18,6 +18,9 @@ import data from "../../data/destinationsData.json";
 import colors from "../../config/colors";
 import PrimaryButton from "../Buttons/PrimaryButton.android";
 
+// Context
+import { AuthContext } from "../Context/AuthContext";
+
 const ratingData = [1, 2, 3, 4, 5, 6];
 
 const AddReviewScreen = ({ navigation, route }) => {
@@ -29,6 +32,27 @@ const AddReviewScreen = ({ navigation, route }) => {
   const [ratingError, setRatingError] = useState(null);
 
   const [title, setTitle] = useState("");
+  const [user, setUser] = useState("");
+
+  const authContext = useContext(AuthContext);
+
+  useEffect(() => {
+    const findById = data.destinations[route.params.id];
+
+    if (findById) {
+      setTitle(findById.name);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (route.params?.user) {
+      setUser(route.params.user);
+    } else {
+      if (authContext.user) {
+        setUser(authContext.user);
+      }
+    }
+  }, [route.params?.user]);
 
   useEffect(() => {
     if (fullNameError === null && contentError === null && ratingError === null)
@@ -50,20 +74,13 @@ const AddReviewScreen = ({ navigation, route }) => {
     }
   }, [fullName, content, rating]);
 
-  useEffect(() => {
-    const findById = data.destinations[route.params.id];
-
-    if (findById) {
-      setTitle(findById.name);
-    }
-  }, []);
-
   // Handle Add Review
   const handleAddReview = () => {
     const review = {
-      name: fullName,
+      name: Object.keys(user).length > 0 ? user.fullname : fullName,
       content,
       rating,
+      image: Object.keys(user).length > 0 && user.url,
     };
     if (review.name && review.content && review.rating) {
       navigation.navigate("Reviews", { review, id: route.params.id, title });
@@ -79,31 +96,42 @@ const AddReviewScreen = ({ navigation, route }) => {
       <Text style={reviewInputStyle.heading}>
         Add review {title ? `for ${title}` : ""}
       </Text>
-      <Text style={reviewInputStyle.subtitle}>
-        If you're not logged in, the picture for your review will be random.
-      </Text>
-      <View style={[reviewInputStyle.loginBtn]}>
-        <Text
-          style={[
-            reviewInputStyle.loginBtnText,
-            { backgroundColor: colors.primaryGreen },
-          ]}
-          onPress={() => {
-            navigation.navigate("Login");
-          }}
-        >
-          Login from here
-        </Text>
-      </View>
-      <Input
-        val={fullName}
-        setVal={setFullName}
-        styles={reviewInputStyle}
-        placeholder="Your Name"
-        icon="face-man"
-      />
-      {fullNameError && fullNameError !== null && (
-        <Text style={reviewInputStyle.error}>{fullNameError}</Text>
+      {Object.keys(user).length === 0 && (
+        <>
+          <Text style={reviewInputStyle.subtitle}>
+            If you're not logged in, the picture for your review will be random.
+          </Text>
+          <View style={[reviewInputStyle.registerBtn]}>
+            <Text
+              style={[
+                reviewInputStyle.registerBtnText,
+                { backgroundColor: colors.primaryGreen },
+              ]}
+              onPress={() => {
+                navigation.navigate("Register", { id: route.params.id });
+              }}
+            >
+              Register from here
+            </Text>
+          </View>
+        </>
+      )}
+
+      {Object.keys(user).length > 0 ? (
+        <Text style={reviewInputStyle.fullname}>User: {user.fullname}</Text>
+      ) : (
+        <>
+          <Input
+            val={fullName}
+            setVal={setFullName}
+            styles={reviewInputStyle}
+            placeholder="Your Name"
+            icon="face-man"
+          />
+          {fullNameError && fullNameError !== null && (
+            <Text style={reviewInputStyle.error}>{fullNameError}</Text>
+          )}
+        </>
       )}
       <Input
         val={content}

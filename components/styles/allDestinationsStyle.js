@@ -25,7 +25,7 @@ export const allDesnationsStyles = StyleSheet.create({
   },
   container: {
     marginHorizontal: "1%",
-    marginBottom: 10,
+    marginBottom: 20,
     borderWidth: 1,
     borderRadius: 6,
     borderColor: colors.primaryGreen,
@@ -34,7 +34,7 @@ export const allDesnationsStyles = StyleSheet.create({
     overflow: "hidden",
   },
   img: {
-    height: 100,
+    height: 200,
     width: "100%",
   },
   textContainer: {
@@ -44,18 +44,22 @@ export const allDesnationsStyles = StyleSheet.create({
     justifyContent: "space-between",
   },
   text: {
-    fontSize: 15,
+    fontSize: 17,
     marginBottom: 5,
+    textAlign: "center",
   },
   subtitle: {
     color: "#333",
-    fontSize: 11,
+    fontSize: 13,
+    textAlign: "center",
   },
   checkButtonText: {
-    fontSize: 11,
+    fontSize: 14,
   },
   checkButton: {
-    padding: 4,
+    padding: 6,
     marginTop: "auto",
+    width: "auto",
+    alignSelf: "center",
   },
 });

@@ -35,15 +35,20 @@ function ReviewsScreen({ navigation, route }) {
 
   useEffect(() => {
     if (route.params?.review && Object.keys(route.params.review).length > 0) {
-      const { name, content, rating, id, title } = route.params.review;
+      const { name, content, rating, id, title, image } = route.params.review;
+
+      const curDate = new Date();
+      const seconds = curDate.getSeconds();
 
       setReviews((prev) =>
         prev.concat({
-          id: name.split(" ").join("-").toLowerCase(),
+          id:
+            name.split(" ").join("-").toLowerCase() + "__" + seconds.toString(),
           name: name,
           text: content,
-          image:
-            "https://images.unsplash.com/photo-1453574503519-1ae2536262ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          image: image
+            ? image
+            : "https://images.unsplash.com/photo-1453574503519-1ae2536262ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
           destination: title,
           destinationId: id,
           rating,

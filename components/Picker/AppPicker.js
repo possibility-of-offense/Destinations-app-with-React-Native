@@ -31,7 +31,7 @@ const AppPicker = ({ data, rating: ratingParent, setRating }) => {
       <TouchableWithoutFeedback onPress={() => setShowModal(true)}>
         <View style={inputWrapper}>
           <View style={input}>
-            <Text style={{ fontSize: 18 }}>
+            <Text style={{ fontSize: 18, color: "#a8a7a7" }}>
               {ratingParent === 0 ? "Rating" : ratingParent}
             </Text>
           </View>
