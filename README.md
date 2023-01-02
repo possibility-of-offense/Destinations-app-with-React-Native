@@ -10,3 +10,7 @@ The app is being hosted through the Expo app. You can download it from here!
 [Download Expo](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_US&gl=US)
 
 ## Use the app
+
+You can scan the QR code and open the app with Expo (after you install it first).
+
+<img src="https://qr.expo.dev/expo-go?owner=ultimatemeaning90&slug=DoneWithIt&releaseChannel=default&host=exp.host" alt="QR code for the app" width="300"/>
