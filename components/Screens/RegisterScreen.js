@@ -72,7 +72,6 @@ const RegisterScreen = ({ navigation, route }) => {
   const authContext = useContext(AuthContext);
 
   const checkForErrors = useCallback((errors, error) => {
-    console.log(errors[error]);
     return errors[error] ? true : false;
   }, []);
 
