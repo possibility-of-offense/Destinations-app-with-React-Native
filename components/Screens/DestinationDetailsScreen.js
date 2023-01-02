@@ -45,7 +45,7 @@ const DestinationDetailsScreen = ({ navigation, route }) => {
   // Content change
   const handleContentChange = (width, height) => {
     scrollViewRef.current?.scrollTo({
-      y: showGallery ? 500 : 0,
+      y: showGallery ? 500 : "auto",
       x: 0,
       animated: true,
     });
@@ -67,54 +67,39 @@ const DestinationDetailsScreen = ({ navigation, route }) => {
         <Text style={destinationDetailsStyle.description}>
           {detailsData.fullDescription}
         </Text>
-        <PrimaryButton
-          backgroundColor={colors.primaryDark}
-          textColor={colors.white}
-          underlayColor={colors.secondaryDark}
-          btnStyles={{ marginTop: 25 }}
-          onPress={() =>
-            navigation.navigate("Reviews", {
-              title: route.params.title,
-              id: detailsData.id,
-            })
-          }
-        >
-          Reviews
-        </PrimaryButton>
-      </View>
 
-      <View style={destinationDetailsStyle.galleryContainer}>
-        <TouchableHighlight
-          style={[
-            destinationDetailsStyle.galleryContainerHeadingWrapper,
-            {
-              backgroundColor: colors.primaryGreen,
-              marginBottom: showGallery ? 20 : 0,
-            },
-          ]}
-          onPress={handleShowGallery}
-          underlayColor={colors.secondaryGreen}
-        >
-          <View>
-            <Text
-              style={[
-                destinationDetailsStyle.galleryContainerHeading,
-                { color: colors.white },
-              ]}
-            >
-              Gallery
-            </Text>
-            <Text
-              style={[
-                destinationDetailsStyle.galleryContainerHeadingAdditional,
-                { color: colors.white },
-              ]}
-            >
-              (click to {showGallery ? "hide" : "show"} gallery)
-            </Text>
-          </View>
-        </TouchableHighlight>
-
+        <View style={destinationDetailsStyle.galleryContainer}>
+          <TouchableHighlight
+            style={[
+              destinationDetailsStyle.galleryContainerHeadingWrapper,
+              {
+                backgroundColor: colors.primaryGreen,
+                marginBottom: showGallery ? 20 : 0,
+              },
+            ]}
+            onPress={handleShowGallery}
+            underlayColor={colors.secondaryGreen}
+          >
+            <View>
+              <Text
+                style={[
+                  destinationDetailsStyle.galleryContainerHeading,
+                  { color: colors.white },
+                ]}
+              >
+                Gallery
+              </Text>
+              <Text
+                style={[
+                  destinationDetailsStyle.galleryContainerHeadingAdditional,
+                  { color: colors.white },
+                ]}
+              >
+                (click to {showGallery ? "hide" : "show"} gallery)
+              </Text>
+            </View>
+          </TouchableHighlight>
+        </View>
         {showGallery &&
           detailsData.popularImages?.length > 0 &&
           detailsData.popularImages.map((img, i) => (
@@ -138,6 +123,29 @@ const DestinationDetailsScreen = ({ navigation, route }) => {
               />
             </TouchableOpacity>
           ))}
+        <View style={destinationDetailsStyle.reviewsBtnWrapper}>
+          <PrimaryButton
+            backgroundColor={colors.primaryDark}
+            textColor={colors.white}
+            underlayColor={colors.secondaryDark}
+            btnStyles={{
+              marginTop: 5,
+              borderRadius: 3,
+              padding: 10,
+              paddingVertical: 6,
+              width: "90%",
+            }}
+            textStyles={{ fontSize: 17 }}
+            onPress={() =>
+              navigation.navigate("Reviews", {
+                title: route.params.title,
+                id: detailsData.id,
+              })
+            }
+          >
+            Reviews
+          </PrimaryButton>
+        </View>
       </View>
     </ScrollView>
   );

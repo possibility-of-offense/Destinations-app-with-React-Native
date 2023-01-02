@@ -60,9 +60,16 @@ export const reviewInputStyle = StyleSheet.create({
     letterSpacing: 1,
   },
   fullname: {
-    marginLeft: 30,
-    fontSize: 17,
+    marginHorizontal: 20,
+    fontSize: 18,
     fontWeight: "bold",
     marginVertical: 10,
+    borderRadius: 25,
+    padding: 10,
+    paddingLeft: 15,
+    paddingRight: 30,
+    textDecorationLine: "underline",
+    letterSpacing: 1,
+    textAlign: "center",
   },
 });

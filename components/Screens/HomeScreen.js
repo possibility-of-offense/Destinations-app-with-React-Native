@@ -1,9 +1,8 @@
 // Hooks
-import { useDeviceOrientation } from "@react-native-community/hooks";
 import { useContext, useEffect, useState } from "react";
 
 // React native
-import { View, Text, ScrollView, Switch, Button } from "react-native";
+import { View, Text, ScrollView, Switch } from "react-native";
 
 // Components
 import Card from "../Cards/Card";
@@ -13,34 +12,14 @@ import data from "../../data/destinationsData.json";
 
 // Styles
 import { homeStyles, homeStyles as styles } from "../styles/homeStyles";
+
 import PrimaryButton from "../Buttons/PrimaryButton.android";
 
 // Colors
 import colors from "../../config/colors";
 import { ThemeContext } from "../Context/ThemeContext";
 
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Button
-        onPress={() => navigation.navigate("Notifications")}
-        title="Go to notifications"
-      />
-    </View>
-  );
-}
-
-function NotificationsScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
-    </View>
-  );
-}
-
 const Home = ({ navigation }) => {
-  const orientation = useDeviceOrientation();
-
   const [destinations, setDestinations] = useState([]);
   const [switchValue, setSwitchValue] = useState(false);
 
@@ -79,14 +58,7 @@ const Home = ({ navigation }) => {
           <Text style={styles.homeContainerHeading}>
             Favourite Destinations
           </Text>
-          <PrimaryButton
-            backgroundColor={colors.primaryGreen}
-            textColor={colors.white}
-            underlayColor={colors.secondaryGreen}
-            onPress={handleNavigateToAllDestinations}
-          >
-            See all destinations
-          </PrimaryButton>
+
           <View>
             {destinations?.length > 0 &&
               destinations.map((dest) => (
@@ -103,6 +75,15 @@ const Home = ({ navigation }) => {
                 />
               ))}
           </View>
+          <PrimaryButton
+            backgroundColor={colors.primaryGreen}
+            textColor={colors.white}
+            underlayColor={colors.secondaryGreen}
+            onPress={handleNavigateToAllDestinations}
+            btnStyles={{ marginTop: 7 }}
+          >
+            See all destinations
+          </PrimaryButton>
         </View>
         <View style={homeStyles.switchContainer}>
           <Text style={styles.switchContainerText}>

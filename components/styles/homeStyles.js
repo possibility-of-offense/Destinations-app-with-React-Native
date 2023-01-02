@@ -1,20 +1,20 @@
 // React native
 import { StyleSheet } from "react-native";
 
-// Colors
-import colors from "../../config/colors";
-
 const homeStyles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     position: "relative",
+    marginTop: 20,
   },
 
-  homeContainer: { paddingBottom: 20, paddingHorizontal: 20, paddingTop: 10 },
+  homeContainer: { paddingBottom: 5, paddingHorizontal: 20, paddingTop: 10 },
   homeContainerHeading: {
     textAlign: "center",
-    fontSize: 18,
-    marginBottom: 10,
+    fontSize: 22,
+    marginBottom: 15,
+    fontWeight: "bold",
+    letterSpacing: 1,
   },
   switchContainer: {
     flexDirection: "row",

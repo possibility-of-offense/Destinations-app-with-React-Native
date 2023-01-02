@@ -2,7 +2,7 @@
 
 // Hooks
 import { useDeviceOrientation } from "@react-native-community/hooks";
-import { Text, View } from "react-native";
+import { Text, View, TouchableHighlight } from "react-native";
 import React, { useState } from "react";
 
 // React navigation
@@ -69,15 +69,11 @@ const AppContainer = () => {
                         color: colors.white,
                         marginTop: orientation.portrait ? 50 : 25,
                         marginLeft: 20,
-                        fontSize: 18,
+                        fontSize: 20,
                         fontWeight: "bold",
                       }}
                     >
-                      <MaterialCommunityIcons
-                        onPress={() => props.navigation.navigate("Home")}
-                        name="home"
-                        size={30}
-                      />
+                      Destinations App
                     </Text>
                   ) : (
                     <Text
@@ -85,13 +81,8 @@ const AppContainer = () => {
                         color: colors.white,
                         marginTop: orientation.portrait ? 50 : 25,
                         marginLeft: 20,
-                        // fontSize: 18,
                         fontWeight: "bold",
                         paddingRight: 40,
-                        // flexDirection: "row",
-                        // alignItems: "center",
-                        // justifyContent: "center",
-                        // flex: 1,
                       }}
                       onPress={() => props.navigation.pop()}
                     >
@@ -182,7 +173,7 @@ const AppContainer = () => {
           borderTopColor: "#ccc",
         }}
       >
-        <View
+        <TouchableHighlight
           style={{
             width: 85,
             height: 50,
@@ -191,15 +182,12 @@ const AppContainer = () => {
             borderRightWidth: 1,
             borderRightColor: "#ccc",
           }}
+          onPress={() => navigationRef?.current?.navigate("Home")}
+          underlayColor={colors.secondaryGreen}
         >
-          <MaterialCommunityIcons
-            onPress={() => navigationRef?.current?.navigate("Home")}
-            name="home"
-            size={20}
-            color="#333"
-          />
-        </View>
-        <View
+          <MaterialCommunityIcons name="home" size={20} color="#333" />
+        </TouchableHighlight>
+        <TouchableHighlight
           style={{
             width: 85,
             height: 50,
@@ -208,14 +196,11 @@ const AppContainer = () => {
             borderRightWidth: 1,
             borderRightColor: "#ccc",
           }}
+          onPress={() => navigationRef?.current?.navigate("All Destinations")}
+          underlayColor={colors.secondaryGreen}
         >
-          <MaterialCommunityIcons
-            onPress={() => navigationRef?.current?.navigate("All Destinations")}
-            name="map"
-            size={20}
-            color="#333"
-          />
-        </View>
+          <MaterialCommunityIcons name="map" size={20} color="#333" />
+        </TouchableHighlight>
         <View
           style={{
             flex: 1,

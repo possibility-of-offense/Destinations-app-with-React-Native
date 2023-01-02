@@ -80,16 +80,14 @@ function ReviewsScreen({ navigation, route }) {
                 height: 1,
                 backgroundColor: colors.primaryGreen,
               }}
-            >
-              {/* <Text>Separator</Text> */}
-            </View>
+            ></View>
           )}
         />
         <View
           style={{
             justifyContent: "center",
-
-            backgroundColor: colors.primaryDark,
+            borderTopWidth: 2,
+            borderTopColor: colors.primaryGreen,
             padding: 6,
           }}
         >

@@ -8,11 +8,11 @@ export const reviewScreenStyle = StyleSheet.create({
   heading: {
     textAlign: "center",
     fontSize: 20,
-    marginBottom: 15,
+    marginTop: 15,
+    paddingBottom: 15,
     fontWeight: "500",
     borderBottomColor: colors.primaryGreen,
     borderBottomWidth: 1,
-    paddingBottom: 7,
   },
   list: {
     paddingHorizontal: 15,

@@ -1,8 +1,15 @@
 // React native
-import { View, Text, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+  Clipboard,
+} from "react-native";
 
 // React hooks
-import { useContext } from "react";
+import { useContext, useMemo, useState } from "react";
 
 // Components
 import PrimaryButton from "../Buttons/PrimaryButton.android";
@@ -46,6 +53,21 @@ const validationSchema = Yup.object().shape({
 });
 
 const RegisterScreen = ({ navigation, route }) => {
+  // Mock photo urls
+  const photosUrls = useMemo(
+    () => ({
+      urls: [
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "https://images.unsplash.com/photo-1554727242-741c14fa561c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
+        "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+        "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80",
+      ],
+    }),
+    []
+  );
+
   // context
   const authContext = useContext(AuthContext);
 
@@ -53,6 +75,11 @@ const RegisterScreen = ({ navigation, route }) => {
     console.log(errors[error]);
     return errors[error] ? true : false;
   }, []);
+
+  // Handle image click to copy it to clipboard
+  const handleCopyToClipboard = (img) => {
+    Clipboard.setString(img);
+  };
 
   // submission
   const handleSubmit = (values) => {
@@ -169,6 +196,35 @@ const RegisterScreen = ({ navigation, route }) => {
                 touched={touched.repeatPassword}
                 secureTextEntry={true}
               />
+              <Text
+                style={{
+                  fontWeight: "bold",
+                  fontSize: 13,
+                  textAlign: "center",
+                  marginBottom: 7,
+                }}
+              >
+                Click on the of the images to copy the url to the clipboard and
+                to paste it or enter manually the url address in the input
+              </Text>
+              <View style={registerStyle.photosGrid}>
+                {photosUrls.urls.map((photo) => (
+                  <TouchableOpacity
+                    key={photo}
+                    onPress={() => handleCopyToClipboard(photo)}
+                    style={{ marginRight: "auto" }}
+                  >
+                    <Image
+                      style={registerStyle.photosGridImage}
+                      source={{
+                        uri: photo,
+                      }}
+                      resizeMode="cover"
+                    />
+                  </TouchableOpacity>
+                ))}
+              </View>
+
               <RegisterInput
                 error={errors.url}
                 handleChange={handleChange("url")}

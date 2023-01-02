@@ -49,4 +49,17 @@ export const registerStyle = StyleSheet.create({
     fontStyle: "italic",
     marginLeft: 3,
   },
+  photosGrid: {
+    marginBottom: 20,
+    flexWrap: "wrap",
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  photosGridImage: {
+    height: 60,
+    width: 60,
+    margin: 3,
+    marginVertical: 6,
+    // marginRight: "auto",
+  },
 });

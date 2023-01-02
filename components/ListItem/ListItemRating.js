@@ -4,9 +4,6 @@ import { View, Text } from "react-native";
 // Styles
 import { listItemRatingStyle } from "../styles/listItemRatingStyle";
 
-// Icons
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-
 const ListItemRating = ({ children, cbs }) => {
   // Handle callbacks
   const handleCallbacks = () => {

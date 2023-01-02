@@ -118,7 +118,11 @@ const AddReviewScreen = ({ navigation, route }) => {
       )}
 
       {Object.keys(user).length > 0 ? (
-        <Text style={reviewInputStyle.fullname}>User: {user.fullname}</Text>
+        <Text
+          style={[reviewInputStyle.fullname, { color: colors.primaryDark }]}
+        >
+          Hello {user.fullname}! Add a review :)
+        </Text>
       ) : (
         <>
           <Input
